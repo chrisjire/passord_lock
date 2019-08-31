@@ -30,7 +30,7 @@ class TestUser(unittest.TestCase):
 		Test to check if the new users info is saved into the users list
 		'''
         self.new_user.save_user()
-        self.assertEqual(len(User.users_list),3)
+        self.assertEqual(len(User.users_list),1)
         
 class TestCredentials(unittest.TestCase):
     '''
@@ -78,6 +78,36 @@ class TestCredentials(unittest.TestCase):
         twitter = Credential('louis','Twitter','lou','14789')
         twitter.save_credentials()
         self.assertEqual(len(Credential.credentials_list),2)
+        
+    def tearDown(self):
+        '''
+        Function to clear the credentials list after every test
+        '''
+        Credential.credentials_list = []
+        User.users_list = []
+        
+    def test_display_credentials(self):
+        '''
+        Test to check if the display_credentials method, displays the correct credentials.
+        '''
+        self.new_credential.save_credentials()
+        twitter = Credential('Chris','Twitter','will','mnop')
+        twitter.save_credentials()
+        LinkedIn = Credential('chris','LinkedIn','will','mnop')
+        LinkedIn.save_credentials()
+        self.assertEqual(len(Credential.display_credentials(twitter.user_name)),1)
+        
+    #def test_delete_credentials(self):
+        #'''
+        #test_delete_contact to test if we can remove a contact from our contact list
+        #'''
+        #self.new_credential.save_credentials()
+        #test_credential = Credential('Christian','Jire','21','pwd123456')
+        #test_credential.save_credentials()
+
+        #self.new_credential.delete_credentials()
+        #self.assertEqual(len(Credential.delete_credentials),1)
+
 
         
 if __name__ == '__main__':

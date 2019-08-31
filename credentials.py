@@ -73,3 +73,11 @@ class Credential:
             if credential.user_name == user_name:
                 user_credentials_list.append(credential)
         return user_credentials_list
+    
+    def delete_credentials(self):
+    
+        '''
+        delete_credentials method deletes saved credentials
+        '''
+
+        Credential.credentials_list.remove(self)
