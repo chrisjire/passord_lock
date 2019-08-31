@@ -14,7 +14,6 @@ class User:
         Methord to define the properties for each user object
         '''
         
-        #Instance Variable
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -46,7 +45,6 @@ class Credential:
     
     def __init__(self,user_name,site_name,account_name,password):
     
-        # instance variables
         self.user_name = user_name
         self.site_name = site_name
         self.account_name = account_name
@@ -56,6 +54,12 @@ class Credential:
         '''
         Function to save a newly created user instance
         '''
-        # global users_list
         Credential.credentials_list.append(self)
+        
+    def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+        '''
+        Function to generate an 8 character password for a credential
+        '''
+        gen_pass=''.join(random.choice(char) for _ in range(size))
+        return gen_pass
         
