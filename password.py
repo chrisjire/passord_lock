@@ -54,3 +54,12 @@ def delete_credentials(credential):
     '''
 
     Credential.credentials_list.remove(credential)
+    
+def copy_credential(site_name):
+    '''
+    Function to copy a credentials details to the clipboard
+    '''
+    return Credential.copy_credential(site_name)
+
+
+
