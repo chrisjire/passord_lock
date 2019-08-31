@@ -1,6 +1,7 @@
 import unittest
 import pyperclip
-from credentials import User
+from credentials import User, Credential
+
 
 class TestUser(unittest.TestCase):
     '''
@@ -29,7 +30,7 @@ class TestUser(unittest.TestCase):
 		Test to check if the new users info is saved into the users list
 		'''
         self.new_user.save_user()
-        self.assertEqual(len(User.users_list),1)
+        self.assertEqual(len(User.users_list),3)
         
 class TestCredentials(unittest.TestCase):
     '''
@@ -44,9 +45,8 @@ class TestCredentials(unittest.TestCase):
 		'''
         self.new_user = User('Christian','Jire','21','pwd123456')
         self.new_user.save_user()
-        user2 = User('Chase','Lorde','22','pwd123456')
+        user2 = User('Chase','Lorde',22,'pw123456')
         user2.save_user()
-
         for user in User.users_list:
             if user.first_name == user2.first_name and user.password == user2.password:
                 current_user = user.first_name
@@ -58,7 +58,18 @@ class TestCredentials(unittest.TestCase):
         '''
         Function to create an account's credentials before each test
         '''
-        self.new_credential = Credential('christian','Facebook','chris','pwd123456')
+        self.new_credential = Credential('Christian','Facebook','chris','pwd123456')
+        
+    def test__init__(self):
+        '''
+        Test to if check the initialization/creation of credential instances is properly done
+        '''
+        
+        self.assertEqual(self.new_credential.user_name,'Christian')
+        self.assertEqual(self.new_credential.site_name,'Facebook')
+        self.assertEqual(self.new_credential.account_name,'chris')
+        self.assertEqual(self.new_credential.password,'pwd123456')
+
 
 
         

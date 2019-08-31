@@ -44,3 +44,11 @@ class Credential:
                 current_user = user.first_name
         return current_user
     
+    def __init__(self,user_name,site_name,account_name,password):
+    
+        # instance variables
+        self.user_name = user_name
+        self.site_name = site_name
+        self.account_name = account_name
+        self.password = password
+    
