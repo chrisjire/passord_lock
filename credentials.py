@@ -52,3 +52,9 @@ class Credential:
         self.account_name = account_name
         self.password = password
     
+    def save_credentials(self):
+        '''
+		Function to save a newly created user instance
+		'''
+		# global users_list
+    	Credential.credentials_list.append(self)
