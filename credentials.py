@@ -54,7 +54,8 @@ class Credential:
     
     def save_credentials(self):
         '''
-		Function to save a newly created user instance
-		'''
-		# global users_list
-    	Credential.credentials_list.append(self)
+        Function to save a newly created user instance
+        '''
+        # global users_list
+        Credential.credentials_list.append(self)
+        
