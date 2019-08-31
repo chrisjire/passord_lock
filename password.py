@@ -157,3 +157,7 @@ def main():
             print(' ')
             print('Wrong option entered. Try again.')
 
+
+
+if __name__ == '__main__':
+        main()
