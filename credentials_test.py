@@ -24,7 +24,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.age,'21')
         self.assertEqual(self.new_user.password,'Pwd123456')
         
-        
+    
         
         
         

@@ -20,3 +20,9 @@ class User:
         self.age = age
         self.password = password
         
+    def save_user(self):
+        '''
+        Function to save a newly created user
+        '''
+        self.users_list.append(self)
+        
