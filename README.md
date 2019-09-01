@@ -15,7 +15,7 @@
 
 * Run application in your terminal using password.py
 
-*Test application using $ python3.6 credentials_test.py 
+* Test application using $ python3.6 credentials_test.py 
 
 * Once you run the App follow the instructions on the terminal
 
