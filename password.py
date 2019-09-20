@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pyperclip
 from credentials import User, Credential
 
